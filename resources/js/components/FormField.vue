@@ -18,6 +18,7 @@
 
     export default {
         mixins: [HandlesValidationErrors, FormField],
+        props: ['resourceName', 'resourceId', 'field'],
 
         mounted() {
             Inputmask({
