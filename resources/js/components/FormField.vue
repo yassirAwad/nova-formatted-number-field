@@ -46,7 +46,7 @@
                     class: this.errorClasses,
                 }
             },
-            fill: function fill(formData) {
+            fill(formData) {
                 try {
                     formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
 
