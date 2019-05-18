@@ -3220,8 +3220,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             rightAlign: false,
             step: this.field.step
         }).mask(document.getElementById(this.field.attribute));
-
-        this.field.fill = this.fill;
     },
 
 

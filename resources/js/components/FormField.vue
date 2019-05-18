@@ -31,8 +31,6 @@
                 rightAlign: false,
                 step: this.field.step,
             }).mask(document.getElementById(this.field.attribute))
-
-            this.field.fill = this.fill;
         },
 
         computed: {
