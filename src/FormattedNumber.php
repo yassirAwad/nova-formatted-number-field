@@ -27,9 +27,5 @@ class FormattedNumber extends Number
         $this->displayUsing(function ($value) {
             return !is_null($value) ? number_format($value, 2) : null;
         });
-
-        $this->fillUsing(function ($request, $model, $attribute, $requestAttribute) {
-            $model->$attribute = filter_var($request[$requestAttribute], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        });
     }
 }
