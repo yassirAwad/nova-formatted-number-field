@@ -3207,6 +3207,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mixins: [__WEBPACK_IMPORTED_MODULE_0_laravel_nova__["HandlesValidationErrors"], __WEBPACK_IMPORTED_MODULE_0_laravel_nova__["FormField"]],
+    props: ['resourceName', 'resourceId', 'field'],
 
     mounted: function mounted() {
         __WEBPACK_IMPORTED_MODULE_1_inputmask___default()({
@@ -3235,21 +3236,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 class: this.errorClasses
             };
         },
-
-        fill: function fill(formData) {
-            try {
-                formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
-            } catch (e) {
-                console.log(this.field.attribute);
-                console.log(this.value);
-                console.log(formData);
-                throw e;
-            }
-        },
         extraAttributes: function extraAttributes() {
             var attrs = this.field.extraAttributes;
 
             return _extends({}, this.defaultAttributes, attrs);
+        }
+    },
+
+    methods: {
+        fill: function fill(formData) {
+            formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
         }
     }
 });
