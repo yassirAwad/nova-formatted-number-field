@@ -46,17 +46,6 @@
                     class: this.errorClasses,
                 }
             },
-            fill(formData) {
-                try {
-                    formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
-
-                } catch (e) {
-                    console.log(this.field.attribute);
-                    console.log(this.value);
-                    console.log(formData);
-                    throw e;
-                }
-            },
             extraAttributes() {
                 const attrs = this.field.extraAttributes
 
@@ -69,5 +58,11 @@
                 }
             },
         },
+
+        methods: {
+            fill(formData) {
+                formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
+            },
+        }
     }
 </script>
