@@ -45,7 +45,12 @@
                     class: this.errorClasses,
                 }
             },
-
+            /**
+             * Fill the given FormData object with the field's internal value.
+             */
+            fill(formData) {
+                formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
+            },
             extraAttributes() {
                 const attrs = this.field.extraAttributes
 
