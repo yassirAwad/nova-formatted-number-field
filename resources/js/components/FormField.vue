@@ -31,6 +31,8 @@
                 rightAlign: false,
                 step: this.field.step,
             }).mask(document.getElementById(this.field.attribute))
+
+            this.field.fill = this.fill;
         },
 
         computed: {
@@ -45,11 +47,16 @@
                     class: this.errorClasses,
                 }
             },
-            /**
-             * Fill the given FormData object with the field's internal value.
-             */
-            fill(formData) {
-                formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
+            fill: function fill(formData) {
+                try {
+                    formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
+
+                } catch (e) {
+                    console.log(this.field.attribute);
+                    console.log(this.value);
+                    console.log(formData);
+                    throw e;
+                }
             },
             extraAttributes() {
                 const attrs = this.field.extraAttributes
