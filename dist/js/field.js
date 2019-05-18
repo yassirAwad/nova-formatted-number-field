@@ -3246,9 +3246,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
     methods: {
         fill: function fill(formData) {
             formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
-            console.log(formData);
-            console.log(this.value);
-            console.log(this.value.replace(',', ''));
         }
     }
 });
