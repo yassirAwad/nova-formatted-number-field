@@ -61,7 +61,7 @@
 
         methods: {
             fill(formData) {
-                formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : null);
+                formData.append(this.field.attribute, this.value ? this.value.replace(',', '') : '');
             },
         }
     }
